@@ -18,9 +18,12 @@ struct FeedRow: View {
                     profileView
                     descriptionView
                     descriptionImageView
-                    HStack(spacing: 10) {
-                        
+                    HStack(spacing: 0) {
+                        Spacer()
                         Text("좋아요")
+                        Text("10")
+                        Text("댓글")
+                        Text("5")
                     }
                 }
             )
