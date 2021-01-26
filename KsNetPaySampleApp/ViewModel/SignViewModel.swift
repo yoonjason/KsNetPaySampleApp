@@ -41,12 +41,7 @@ class SignViewModel: ObservableObject, Identifiable {
                         if let jwt = jsonData.token {
                             print(jwt)
                             isLogined.send(true)
-                            
-//                            let stream = isLogined.sink(receiveValue: { value in
-//                                print("#@#@#@#@#\(value)")
-//                            })
-//
-//                            print("stream \(stream)")
+                            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "isLogined"), object: jwt)
                         }
                     }
                 }
