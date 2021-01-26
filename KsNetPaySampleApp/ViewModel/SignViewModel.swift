@@ -15,10 +15,15 @@ class SignViewModel: ObservableObject, Identifiable {
     @Published var userPwd = ""
 //    @Published var isSignin = false
     var isLogined = CurrentValueSubject<Bool, Never>(false)
+//    let isLogined = PassthroughSubject<Bool, Never>()
 
 //    var isSignedPublisher : AnyPublisher<Bool, Never> {
 //
 //    }
+    
+    init() {
+        isLogined.send(false)
+    }
 
     func emailLogin(_ userAgreePath: String? = "E", userId: String, userPwd: String, uuid : String? = "Simulator") {
         let param = ["userAgreePath": "E", "userId": userId, "userPwd": userPwd, "uuid":uuid]
@@ -39,7 +44,6 @@ class SignViewModel: ObservableObject, Identifiable {
                 if let data = try? JSONSerialization.data(withJSONObject: obj, options: .prettyPrinted) {
                     if let jsonData = try? JSONDecoder().decode(TokenModel.self, from: data) {
                         if let jwt = jsonData.token {
-                            print(jwt)
                             isLogined.send(true)
                             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "isLogined"), object: jwt)
                         }

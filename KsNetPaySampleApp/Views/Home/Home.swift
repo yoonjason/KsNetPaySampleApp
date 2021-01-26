@@ -40,6 +40,17 @@ struct Home: View {
                             print("값이 도착 했읍니다. \(value)")
                         })
                         testStatus.send(true)
+                        viewModel.isLogined.sink(receiveCompletion: {
+                            completion in
+                                switch completion {
+                                case .finished :
+                                    print("finished")
+                                case .failure(let error) :
+                                    print(error)
+                                }
+                        }, receiveValue: { (value) in
+                            print("뷰모델의 값이 도착 했읍니다. \(value)")
+                        })
                     }
                         .frame(width: proxy.size.width, height: 50)
                         .foregroundColor(.white)
