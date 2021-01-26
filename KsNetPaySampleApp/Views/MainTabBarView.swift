@@ -49,7 +49,7 @@ fileprivate extension View {
 private extension MainTabBarView {
     
     var home : some View {
-        Home()
+        Home(viewModel: SignViewModel())
             .tag(Tabs.Home)
             .tabItem(imgae: self.selectedTab == .Home ? "icHomeSelect" : "icHomeNor", text: "홈")
     }
