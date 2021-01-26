@@ -17,51 +17,44 @@ struct Home: View {
     let testStatus = CurrentValueSubject<Bool, Error>(true)
     @State private var token = ""
     @State var bag = Set<AnyCancellable>()
-    
+
     var body: some View {
         NavigationView {
             GeometryReader { proxy in
-                VStack {
-                    TextField("이메일 입력해주세요.", text: $viewModel.userId)
-                        .frame(width: proxy.size.width, height: 50, alignment: .center)
-                    HorizontalLine(color: .black)
-                    SecureField("비밀번호를 입력해주세요.", text: $viewModel.userPwd)
-                        .frame(width: proxy.size.width, height: 50, alignment: .center)
-                    HorizontalLine(color: .black)
-                    customDivider
-                    Rectangle()
-                        .foregroundColor(.green)
-                        .cornerRadius(10)
-                        .frame(width: proxy.size.width, height: 50)
-                        .overlay (
-                        Text("로그인하기")
-                            .foregroundColor(.white)
-                    )
-                        .onTapGesture {
-                        viewModel.isLogined.sink(receiveCompletion: { completion in
-                            print(completion)
-                        }, receiveValue: { (value) in
-                            print("뷰에서 값 받아오냐 씨발\(value)")
-                            
-                        }).store(in: &bag)
-                        viewModel.emailLogin()
+                ScrollView {
+                    VStack {
+                        TextField("이메일 입력해주세요.", text: $viewModel.userId)
+                            .frame(width: proxy.size.width, height: 50, alignment: .center)
+                        HorizontalLine(color: .black)
+                        SecureField("비밀번호를 입력해주세요.", text: $viewModel.userPwd)
+                            .frame(width: proxy.size.width, height: 50, alignment: .center)
+                        HorizontalLine(color: .black)
+                        customDivider
+                        Rectangle()
+                            .foregroundColor(.green)
+                            .cornerRadius(10)
+                            .frame(width: proxy.size.width, height: 50)
+                            .overlay (
+                            Text("로그인하기")
+                                .foregroundColor(.white)
+                        )
+                            .onTapGesture {
+                            viewModel.isLogined.sink(receiveCompletion: { completion in
+                                print(completion)
+                            }, receiveValue: { (value) in
+                                print("뷰에서 값 받아오냐 씨발\(value)")
 
+                            }).store(in: &bag)
+                            viewModel.emailLogin()
+
+                        }
+                        Text("login Token : "+token).font(Font.system(size: 12))
+                        Text(alertMessage)
                     }
-                    Text(token)
                 }
-
             }
                 .navigationBarTitle("로그인")
                 .padding()
-        }
-            .onReceive(NotificationCenter.default.publisher(for: Notification.Name(rawValue: "isLogined"))) { [self] notification in
-            if let jwt = notification.object as? String {
-//                print(jwt)
-                viewModel.signToken.sink(receiveValue: { value in
-                    print("token은요? \(value)")
-                })
-                viewModel.signToken.send(jwt)
-            }
         }
             .onReceive(NotificationCenter.default.publisher(for: Notification.Name(rawValue: "pushData"))) { [self] notification in
             print("ContentView로 들어왔나요? \(notification.userInfo)")
@@ -78,11 +71,11 @@ struct Home: View {
             }, secondaryButton: .cancel())
         }
             .onAppear {
-                viewModel.signToken.sink(receiveCompletion: { completion in
-                    print(completion)
-                }, receiveValue: { token in
-                    self.token = token
-                })
+            viewModel.signToken.sink(receiveCompletion: { completion in
+                print(completion)
+            }, receiveValue: { token in
+                self.token = token
+            })
                 .store(in: &bag)
         }
 
@@ -92,8 +85,8 @@ struct Home: View {
         Color.primary.opacity(0.0)
             .frame(maxWidth: .infinity, maxHeight: 15)
     }
-    
-    var tokenView : some View {
+
+    var tokenView: some View {
         Text(token)
     }
 }
