@@ -7,10 +7,12 @@
 
 import SwiftUI
 
+enum Tabs{
+    case Home, Feed, Stage, My
+}
+
 struct MainTabBarView: View {
-    private enum Tabs{
-        case Home, Feed, Stage, My
-    }
+ 
     @State private var selectedTab : Tabs = .Feed
     
     var body: some View {
@@ -23,6 +25,7 @@ struct MainTabBarView: View {
             }
             .accentColor(.primary)
         }
+        .background(Color.white)
         .accentColor(.black)
         .edgesIgnoringSafeArea(.top)
     }
@@ -44,29 +47,28 @@ fileprivate extension View {
 }
 
 private extension MainTabBarView {
-    var Feed2 : some View {
-    Feed()
-        .tag(Tabs.Feed)
-//        .tabItem(image: "icFeed", text: "피드", isSelected: $)
-    }
+    
     var home : some View {
-        Text("홈")
+        Home()
             .tag(Tabs.Home)
-            .tabItem(imgae: "icHomeNor", text: "홈")
+            .tabItem(imgae: self.selectedTab == .Home ? "icHomeSelect" : "icHomeNor", text: "홈")
     }
     var feed : some View {
         Feed()
             .tag(Tabs.Feed)
-            .tabItem(imgae: "icFeedNor", text: "피드")
+            .tabItem(imgae: self.selectedTab == .Feed ? "icFeedSelect":"icFeedNor", text: "피드")
+            .onAppear{
+                UITableView.appearance().separatorStyle = .none
+            }
     }
     var stage : some View {
         Text("스테이지")
             .tag(Tabs.Stage)
-            .tabItem(imgae: "icStageNor", text: "스테이지")
+            .tabItem(imgae: self.selectedTab == .Stage ? "icStageSelect":"icStageNor", text: "스테이지")
     }
     var my : some View {
         Text("나")
             .tag(Tabs.My)
-            .tabItem(imgae: "icMyNor", text: "나")
+            .tabItem(imgae: self.selectedTab == .My ? "icMySelect":"icMyNor", text: "나")
     }
 }

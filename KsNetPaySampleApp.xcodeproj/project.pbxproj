@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -21,6 +21,16 @@
 		1B6A3D2825BEC7A10093D607 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6A3D2725BEC7A10093D607 /* ColorExtension.swift */; };
 		1B6A3D3125BEDA250093D607 /* FeedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6A3D3025BEDA250093D607 /* FeedData.swift */; };
 		1B6A3D3625BEDC780093D607 /* FeedRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6A3D3525BEDC780093D607 /* FeedRow.swift */; };
+		1B6A3D3B25BF9AB50093D607 /* FeedDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6A3D3A25BF9AB50093D607 /* FeedDetailView.swift */; };
+		1B6A3D4025BFD37C0093D607 /* ProductWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6A3D3F25BFD37C0093D607 /* ProductWebView.swift */; };
+		1BCBC50125BFD45400736D56 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCBC50025BFD45400736D56 /* Home.swift */; };
+		1BCBC52625BFD9A500736D56 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCBC52525BFD9A500736D56 /* Globals.swift */; };
+		1BCBC52B25BFDA3000736D56 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1BCBC52A25BFDA3000736D56 /* GoogleService-Info.plist */; };
+		1BCBC54925BFDE1000736D56 /* SignViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCBC54825BFDE1000736D56 /* SignViewModel.swift */; };
+		1BCBC55725BFE82800736D56 /* TokenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCBC55625BFE82800736D56 /* TokenModel.swift */; };
+		4E82B565A3365FDFDBBD9EA0 /* Pods_KsNetPaySampleAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70BABAD228F20A393401532A /* Pods_KsNetPaySampleAppTests.framework */; };
+		B5CEC0BCDF1D27C2666396F6 /* Pods_KsNetPaySampleApp_KsNetPaySampleAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0495E29A0370B83CACC5297 /* Pods_KsNetPaySampleApp_KsNetPaySampleAppUITests.framework */; };
+		C59BCFB6C049785175BDD748 /* Pods_KsNetPaySampleApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA169EDF647CBD473032BBF8 /* Pods_KsNetPaySampleApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +71,23 @@
 		1B6A3D2725BEC7A10093D607 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		1B6A3D3025BEDA250093D607 /* FeedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedData.swift; sourceTree = "<group>"; };
 		1B6A3D3525BEDC780093D607 /* FeedRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedRow.swift; sourceTree = "<group>"; };
+		1B6A3D3A25BF9AB50093D607 /* FeedDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDetailView.swift; sourceTree = "<group>"; };
+		1B6A3D3F25BFD37C0093D607 /* ProductWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductWebView.swift; sourceTree = "<group>"; };
+		1BCBC50025BFD45400736D56 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		1BCBC52525BFD9A500736D56 /* Globals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
+		1BCBC52A25BFDA3000736D56 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		1BCBC52F25BFDA6400736D56 /* KsNetPaySampleApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KsNetPaySampleApp.entitlements; sourceTree = "<group>"; };
+		1BCBC54825BFDE1000736D56 /* SignViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignViewModel.swift; sourceTree = "<group>"; };
+		1BCBC55625BFE82800736D56 /* TokenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenModel.swift; sourceTree = "<group>"; };
+		65DDB051BB7289ADE5741F05 /* Pods-KsNetPaySampleAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KsNetPaySampleAppTests.debug.xcconfig"; path = "Target Support Files/Pods-KsNetPaySampleAppTests/Pods-KsNetPaySampleAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		69E996023594ED0B00E1A8C3 /* Pods-KsNetPaySampleApp-KsNetPaySampleAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KsNetPaySampleApp-KsNetPaySampleAppUITests.release.xcconfig"; path = "Target Support Files/Pods-KsNetPaySampleApp-KsNetPaySampleAppUITests/Pods-KsNetPaySampleApp-KsNetPaySampleAppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		70BABAD228F20A393401532A /* Pods_KsNetPaySampleAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KsNetPaySampleAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A1A63A1BED69F152C8AFAC1 /* Pods-KsNetPaySampleAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KsNetPaySampleAppTests.release.xcconfig"; path = "Target Support Files/Pods-KsNetPaySampleAppTests/Pods-KsNetPaySampleAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		C998285A29BD3DF1D309CF91 /* Pods-KsNetPaySampleApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KsNetPaySampleApp.debug.xcconfig"; path = "Target Support Files/Pods-KsNetPaySampleApp/Pods-KsNetPaySampleApp.debug.xcconfig"; sourceTree = "<group>"; };
+		CC037FFE3C5845E85CCA5B89 /* Pods-KsNetPaySampleApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KsNetPaySampleApp.release.xcconfig"; path = "Target Support Files/Pods-KsNetPaySampleApp/Pods-KsNetPaySampleApp.release.xcconfig"; sourceTree = "<group>"; };
+		EA169EDF647CBD473032BBF8 /* Pods_KsNetPaySampleApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KsNetPaySampleApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0495E29A0370B83CACC5297 /* Pods_KsNetPaySampleApp_KsNetPaySampleAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KsNetPaySampleApp_KsNetPaySampleAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB28F6CA242D95F9CC34E0DA /* Pods-KsNetPaySampleApp-KsNetPaySampleAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KsNetPaySampleApp-KsNetPaySampleAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-KsNetPaySampleApp-KsNetPaySampleAppUITests/Pods-KsNetPaySampleApp-KsNetPaySampleAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C59BCFB6C049785175BDD748 /* Pods_KsNetPaySampleApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E82B565A3365FDFDBBD9EA0 /* Pods_KsNetPaySampleAppTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,12 +111,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5CEC0BCDF1D27C2666396F6 /* Pods_KsNetPaySampleApp_KsNetPaySampleAppUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1817B92FB17AC05EFC76311B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EA169EDF647CBD473032BBF8 /* Pods_KsNetPaySampleApp.framework */,
+				F0495E29A0370B83CACC5297 /* Pods_KsNetPaySampleApp_KsNetPaySampleAppUITests.framework */,
+				70BABAD228F20A393401532A /* Pods_KsNetPaySampleAppTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		1B6A3CD425BEC1630093D607 = {
 			isa = PBXGroup;
 			children = (
@@ -95,6 +135,8 @@
 				1B6A3CF925BEC1640093D607 /* KsNetPaySampleAppTests */,
 				1B6A3D0425BEC1640093D607 /* KsNetPaySampleAppUITests */,
 				1B6A3CDE25BEC1630093D607 /* Products */,
+				914B7D8AF9BF592AB18B8DEF /* Pods */,
+				1817B92FB17AC05EFC76311B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -111,6 +153,9 @@
 		1B6A3CDF25BEC1630093D607 /* KsNetPaySampleApp */ = {
 			isa = PBXGroup;
 			children = (
+				1BCBC52F25BFDA6400736D56 /* KsNetPaySampleApp.entitlements */,
+				1BCBC52A25BFDA3000736D56 /* GoogleService-Info.plist */,
+				1BCBC54725BFDE0000736D56 /* ViewModel */,
 				1B6A3D2F25BED9FD0093D607 /* Model */,
 				1B6A3D2525BEC7890093D607 /* Helper */,
 				1B6A3D1625BEC1940093D607 /* Views */,
@@ -155,6 +200,7 @@
 		1B6A3D1625BEC1940093D607 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1BCBC4FF25BFD44900736D56 /* Home */,
 				1B6A3D1725BEC1A10093D607 /* Feed */,
 				1B6A3D1825BEC1B60093D607 /* MainTabBarView.swift */,
 			);
@@ -166,6 +212,8 @@
 			children = (
 				1B6A3D2025BEC6D80093D607 /* Feed.swift */,
 				1B6A3D3525BEDC780093D607 /* FeedRow.swift */,
+				1B6A3D3A25BF9AB50093D607 /* FeedDetailView.swift */,
+				1B6A3D3F25BFD37C0093D607 /* ProductWebView.swift */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -174,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				1B6A3D2625BEC7930093D607 /* Extension */,
+				1BCBC52525BFD9A500736D56 /* Globals.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -190,8 +239,38 @@
 			isa = PBXGroup;
 			children = (
 				1B6A3D3025BEDA250093D607 /* FeedData.swift */,
+				1BCBC55625BFE82800736D56 /* TokenModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		1BCBC4FF25BFD44900736D56 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				1BCBC50025BFD45400736D56 /* Home.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		1BCBC54725BFDE0000736D56 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1BCBC54825BFDE1000736D56 /* SignViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		914B7D8AF9BF592AB18B8DEF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C998285A29BD3DF1D309CF91 /* Pods-KsNetPaySampleApp.debug.xcconfig */,
+				CC037FFE3C5845E85CCA5B89 /* Pods-KsNetPaySampleApp.release.xcconfig */,
+				FB28F6CA242D95F9CC34E0DA /* Pods-KsNetPaySampleApp-KsNetPaySampleAppUITests.debug.xcconfig */,
+				69E996023594ED0B00E1A8C3 /* Pods-KsNetPaySampleApp-KsNetPaySampleAppUITests.release.xcconfig */,
+				65DDB051BB7289ADE5741F05 /* Pods-KsNetPaySampleAppTests.debug.xcconfig */,
+				8A1A63A1BED69F152C8AFAC1 /* Pods-KsNetPaySampleAppTests.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,9 +280,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1B6A3D0A25BEC1640093D607 /* Build configuration list for PBXNativeTarget "KsNetPaySampleApp" */;
 			buildPhases = (
+				2AE6088F5544C25F703ADD3E /* [CP] Check Pods Manifest.lock */,
 				1B6A3CD925BEC1630093D607 /* Sources */,
 				1B6A3CDA25BEC1630093D607 /* Frameworks */,
 				1B6A3CDB25BEC1630093D607 /* Resources */,
+				AB74E4821E7F68162FC6CE71 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -218,6 +299,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1B6A3D0D25BEC1640093D607 /* Build configuration list for PBXNativeTarget "KsNetPaySampleAppTests" */;
 			buildPhases = (
+				A99B975A34774E00B7310DE0 /* [CP] Check Pods Manifest.lock */,
 				1B6A3CF225BEC1640093D607 /* Sources */,
 				1B6A3CF325BEC1640093D607 /* Frameworks */,
 				1B6A3CF425BEC1640093D607 /* Resources */,
@@ -236,9 +318,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1B6A3D1025BEC1640093D607 /* Build configuration list for PBXNativeTarget "KsNetPaySampleAppUITests" */;
 			buildPhases = (
+				5DEBEB59E7DFCE47B8E3DE5D /* [CP] Check Pods Manifest.lock */,
 				1B6A3CFD25BEC1640093D607 /* Sources */,
 				1B6A3CFE25BEC1640093D607 /* Frameworks */,
 				1B6A3CFF25BEC1640093D607 /* Resources */,
+				56A433531E50F8B0ECCE92DE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -298,6 +382,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B6A3CF025BEC1640093D607 /* LaunchScreen.storyboard in Resources */,
+				1BCBC52B25BFDA3000736D56 /* GoogleService-Info.plist in Resources */,
 				1B6A3CED25BEC1640093D607 /* Preview Assets.xcassets in Resources */,
 				1B6A3CEA25BEC1640093D607 /* Assets.xcassets in Resources */,
 			);
@@ -319,19 +404,128 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2AE6088F5544C25F703ADD3E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KsNetPaySampleApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		56A433531E50F8B0ECCE92DE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KsNetPaySampleApp-KsNetPaySampleAppUITests/Pods-KsNetPaySampleApp-KsNetPaySampleAppUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KsNetPaySampleApp-KsNetPaySampleAppUITests/Pods-KsNetPaySampleApp-KsNetPaySampleAppUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KsNetPaySampleApp-KsNetPaySampleAppUITests/Pods-KsNetPaySampleApp-KsNetPaySampleAppUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5DEBEB59E7DFCE47B8E3DE5D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KsNetPaySampleApp-KsNetPaySampleAppUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A99B975A34774E00B7310DE0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KsNetPaySampleAppTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AB74E4821E7F68162FC6CE71 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KsNetPaySampleApp/Pods-KsNetPaySampleApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KsNetPaySampleApp/Pods-KsNetPaySampleApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KsNetPaySampleApp/Pods-KsNetPaySampleApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1B6A3CD925BEC1630093D607 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				1B6A3D1925BEC1B60093D607 /* MainTabBarView.swift in Sources */,
+				1BCBC54925BFDE1000736D56 /* SignViewModel.swift in Sources */,
 				1B6A3D2125BEC6D80093D607 /* Feed.swift in Sources */,
 				1B6A3D3625BEDC780093D607 /* FeedRow.swift in Sources */,
+				1B6A3D3B25BF9AB50093D607 /* FeedDetailView.swift in Sources */,
 				1B6A3CE825BEC1630093D607 /* KsNetPaySampleApp.xcdatamodeld in Sources */,
+				1B6A3D4025BFD37C0093D607 /* ProductWebView.swift in Sources */,
+				1BCBC52625BFD9A500736D56 /* Globals.swift in Sources */,
 				1B6A3CE125BEC1630093D607 /* AppDelegate.swift in Sources */,
 				1B6A3CE325BEC1630093D607 /* SceneDelegate.swift in Sources */,
 				1B6A3D2825BEC7A10093D607 /* ColorExtension.swift in Sources */,
 				1B6A3CE525BEC1630093D607 /* ContentView.swift in Sources */,
+				1BCBC50125BFD45400736D56 /* Home.swift in Sources */,
+				1BCBC55725BFE82800736D56 /* TokenModel.swift in Sources */,
 				1B6A3D3125BEDA250093D607 /* FeedData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -430,7 +624,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -485,7 +679,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -497,19 +691,22 @@
 		};
 		1B6A3D0B25BEC1640093D607 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C998285A29BD3DF1D309CF91 /* Pods-KsNetPaySampleApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = KsNetPaySampleApp/KsNetPaySampleApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"KsNetPaySampleApp/Preview Content\"";
 				DEVELOPMENT_TEAM = 377B8R7NH8;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = KsNetPaySampleApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = kr.co.KsNetPaySampleApp;
+				PRODUCT_BUNDLE_IDENTIFIER = kr.co.iminfintech;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -518,19 +715,22 @@
 		};
 		1B6A3D0C25BEC1640093D607 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CC037FFE3C5845E85CCA5B89 /* Pods-KsNetPaySampleApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = KsNetPaySampleApp/KsNetPaySampleApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"KsNetPaySampleApp/Preview Content\"";
 				DEVELOPMENT_TEAM = 377B8R7NH8;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = KsNetPaySampleApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = kr.co.KsNetPaySampleApp;
+				PRODUCT_BUNDLE_IDENTIFIER = kr.co.iminfintech;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -539,6 +739,7 @@
 		};
 		1B6A3D0E25BEC1640093D607 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 65DDB051BB7289ADE5741F05 /* Pods-KsNetPaySampleAppTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -561,6 +762,7 @@
 		};
 		1B6A3D0F25BEC1640093D607 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A1A63A1BED69F152C8AFAC1 /* Pods-KsNetPaySampleAppTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -583,6 +785,7 @@
 		};
 		1B6A3D1125BEC1640093D607 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FB28F6CA242D95F9CC34E0DA /* Pods-KsNetPaySampleApp-KsNetPaySampleAppUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -603,6 +806,7 @@
 		};
 		1B6A3D1225BEC1640093D607 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 69E996023594ED0B00E1A8C3 /* Pods-KsNetPaySampleApp-KsNetPaySampleAppUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

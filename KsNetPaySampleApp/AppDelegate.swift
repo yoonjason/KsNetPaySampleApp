@@ -7,15 +7,99 @@
 
 import UIKit
 import CoreData
+import UserNotifications
+import Firebase
+import CoreTelephony
+import AdSupport
+import IQKeyboardManagerSwift
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    let gcmMessageIDKey = "gcm.message_id"
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+            
+        IQKeyboardManager.shared.enable = true
+        
+        FirebaseApp.configure()
+
+        Messaging.messaging().delegate = self
+
+        if #available(iOS 10.0, *) {
+            // For iOS 10 display notification (sent via APNS)
+            UNUserNotificationCenter.current().delegate = self
+
+            let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
+            UNUserNotificationCenter.current().requestAuthorization(
+                options: authOptions,
+                completionHandler: { _, _ in })
+        } else {
+            let settings: UIUserNotificationSettings =
+                UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
+            application.registerUserNotificationSettings(settings)
+        }
+
+        application.registerForRemoteNotifications()
+        
+        getDeviceInfo()
+        
         return true
+    }
+    
+    func getDeviceInfo(){
+        let locale = Locale.current.regionCode
+        var idfa : String = ""
+        let manager = ASIdentifierManager.shared()
+        guard manager.isAdvertisingTrackingEnabled else {
+            return
+        }
+        idfa = manager.advertisingIdentifier.uuidString
+        #if targetEnvironment(simulator)
+        idfa = "A8F03200-4DCF-42FE-B5F6-EE6D3471C702"
+        #endif
+        
+//        Globals.sharedInstance.initParameters["uuid1"] = idfa
+//        Globals.sharedInstance.headers["uuid"] = idfa
+        
+        if let idfv = UIDevice.current.identifierForVendor?.uuidString {
+            Globals.sharedInstance.initParameters["uuid"] = idfv
+            Globals.sharedInstance.uuid = idfv
+        }
+        let systemVersion = UIDevice.current.systemVersion
+        if let appVersionInfo = Globals.sharedInstance.appVersionInfo {
+            Globals.sharedInstance.headers["app-Version"] = appVersionInfo
+        }
+        
+        var systemInfo = utsname()
+        uname(&systemInfo)
+        
+        let machineMirror = Mirror(reflecting: systemInfo.machine)
+        let identifier = machineMirror.children.reduce("") { identifier, element in
+            guard let value = element.value as? Int8, value != 0 else { return identifier }
+            return identifier + String(UnicodeScalar(UInt8(value)))
+        }
+        
+        let telephoneInfo = CTTelephonyNetworkInfo()
+        var operatorName : String = "testPhone"
+        if let provider = telephoneInfo.serviceSubscriberCellularProviders?.first?.value {
+            if let carrierName = provider.carrierName {
+                operatorName = carrierName
+            }
+        }
+        Globals.sharedInstance.initParameters["osVer"] = systemVersion
+        Globals.sharedInstance.initParameters["operator"] = operatorName
+        Globals.sharedInstance.initParameters["brand"] = "apple"
+        Globals.sharedInstance.initParameters["model"] = identifier
+        
+        
+        let jsonToData = ["os_ver_int":"", "os_ver":systemVersion, "operator":operatorName, "brand":"apple", "model":identifier]
+        
+        
+//        if let jsonStr = Functions.convertIntoJSONString(arrayObject: jsonToData) {
+//            Globals.sharedInstance.initParameters["deviceInfo"] = jsonStr
+//        }
     }
 
     // MARK: UISceneSession Lifecycle
@@ -79,3 +163,90 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+extension AppDelegate: MessagingDelegate, UNUserNotificationCenterDelegate {
+
+    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
+
+
+        print("Firebase registration token : \(fcmToken)")
+        Globals.sharedInstance.pushToken = fcmToken ?? ""
+        print("Globals push token is \(Globals.sharedInstance.pushToken)")
+        Globals.sharedInstance.initParameters["fcmToken"] = fcmToken
+        Globals.sharedInstance.initfff()
+        let dataDict: [String: String] = ["token": fcmToken ?? ""]
+        NotificationCenter.default.post(name: Notification.Name("FCMToken"), object: nil, userInfo: dataDict)
+
+    }
+
+
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any]) {
+        // If you are receiving a notification message while your app is in the background,
+        // this callback will not be fired till the user taps on the notification launching the application.
+        // TODO: Handle data of notification
+
+        // With swizzling disabled you must let Messaging know about the message, for Analytics
+        // Messaging.messaging().appDidReceiveMessage(userInfo)
+
+        // Print message ID.
+        if let messageID = userInfo[gcmMessageIDKey] {
+            print("Message ID: \(messageID)")
+        }
+
+        // Print full message.
+        print("\(#function) #####::::#####  \(userInfo)")
+        print(userInfo)
+    }
+
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any],
+                     fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        // If you are receiving a notification message while your app is in the background,
+        // this callback will not be fired till the user taps on the notification launching the application.
+        // TODO: Handle data of notification
+
+        // With swizzling disabled you must let Messaging know about the message, for Analytics
+        // Messaging.messaging().appDidReceiveMessage(userInfo)
+
+        // Print message ID.
+        if let messageID = userInfo[gcmMessageIDKey] {
+            print("Message ID: \(messageID)")
+        }
+
+        // Print full message.
+        print("\(#function) #####::::#####  \(userInfo)")
+
+        completionHandler(UIBackgroundFetchResult.newData)
+    }
+    
+
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+//        let userInfo = notification.request.content.userInfo
+//        print("\(#function) #####::::#####  \(userInfo)")
+        
+        print("푸시 메시지 클릭시 클릭 이벤트가 전달되는 함수인가요?")
+        print(response.notification.request.content.userInfo)
+        let data = response.notification.request.content.userInfo
+        NotificationCenter.default.post(name: Notification.Name("pushData"), object: nil, userInfo: data)
+        completionHandler()
+    }
+
+    //foreground에 있을 때
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        let userInfo = notification.request.content.userInfo
+
+        guard let messageId = userInfo[gcmMessageIDKey] else {
+            print("\(#function), no message")
+            return
+        }
+        center.delegate = self
+
+        print("\(#function) ::: \(userInfo)")
+        NotificationCenter.default.post(name: Notification.Name("pushData"), object: nil, userInfo: userInfo)
+        completionHandler([.badge, .banner])
+    }
+
+
+}
+
+extension NSNotification {
+    static let token = NSNotification.Name.init("TOKEN")
+}

@@ -8,17 +8,26 @@
 import SwiftUI
 
 struct Feed: View {
+
     var body: some View {
         NavigationView {
             VStack {
-                Text("Feed")
                 List(feedSamples) { feed in
-                    FeedRow()
+                    FeedRow(feed: feed)
+                    NavigationLink(
+                        destination: FeedDetailView()) {
+                        EmptyView()
+                    }.frame(width:0).hidden()
                 }
+//                .listRowInsets(EdgeInsets())
+                .listStyle(PlainListStyle())
             }
-                .navigationBarTitle("Feed")
+            .edgesIgnoringSafeArea(.top)
+            .navigationBarTitle("Feed")
         }
+
     }
+    
 }
 
 struct Feed_Previews: PreviewProvider {
