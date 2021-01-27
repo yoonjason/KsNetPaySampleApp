@@ -17,6 +17,7 @@ struct Home: View {
     let testStatus = CurrentValueSubject<Bool, Error>(true)
     @State private var token = ""
     @State var bag = Set<AnyCancellable>()
+    @State var isLogin = false
 
     var body: some View {
         NavigationView {
@@ -42,14 +43,22 @@ struct Home: View {
                             viewModel.isLogined.sink(receiveCompletion: { completion in
                                 print(completion)
                             }, receiveValue: { (value) in
-                                print("뷰에서 값 받아오냐 씨발\(value)")
-
+                                print("\(value)")
+                                self.isLogin = true
                             }).store(in: &bag)
+
+                            viewModel.signToken.sink(receiveCompletion: { completion in
+                                print(completion)
+                            }, receiveValue: { token in
+                                self.token = token
+                            })
+                                .store(in: &bag)
+                                
                             viewModel.emailLogin()
 
                         }
-                        Text("login Token : "+token).font(Font.system(size: 12))
-                        Text(alertMessage)
+                        Text("login Token : " + token).font(Font.system(size: 12))
+                        Text(alertMessage).lineLimit(nil)
                     }
                 }
             }
@@ -60,7 +69,6 @@ struct Home: View {
             print("ContentView로 들어왔나요? \(notification.userInfo)")
             if let aps = notification.userInfo!["mediaUrl"] as? String {
                 print(aps)
-
             }
             alertMessage = String("\(notification.userInfo)")
             isPresented = true
@@ -70,13 +78,8 @@ struct Home: View {
                 self.isPresented = false
             }, secondaryButton: .cancel())
         }
-            .onAppear {
-            viewModel.signToken.sink(receiveCompletion: { completion in
-                print(completion)
-            }, receiveValue: { token in
-                self.token = token
-            })
-                .store(in: &bag)
+        .alert(isPresented: $isLogin) {
+            Alert(title: Text("\($viewModel.userId.wrappedValue)로"), message: Text("로그인 되었습니다."), dismissButton: .cancel())
         }
 
     }

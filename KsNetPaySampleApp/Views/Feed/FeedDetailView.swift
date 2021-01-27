@@ -9,7 +9,7 @@ import SwiftUI
 
 struct FeedDetailView: View {
     let images: [String] = ["dunk2", "dunk3", "dunk4"]
-    @State var isModel: Bool = false
+    @State var isModal: Bool = false
     var body: some View {
         ScrollView {
 //            productDescriptionView()
@@ -96,11 +96,11 @@ extension FeedDetailView {
         )
             .edgesIgnoringSafeArea(.bottom)
             .onTapGesture {
-            isModel = true
+            isModal = true
             print("상품구매!")
         }
-            .sheet(isPresented: $isModel, content: {
-
+            .sheet(isPresented: $isModal, content: {
+                ProductWebView(isModel: $isModal, viewModel: WebViewModel())
         })
     }
 }

@@ -23,6 +23,9 @@
 		1B6A3D3625BEDC780093D607 /* FeedRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6A3D3525BEDC780093D607 /* FeedRow.swift */; };
 		1B6A3D3B25BF9AB50093D607 /* FeedDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6A3D3A25BF9AB50093D607 /* FeedDetailView.swift */; };
 		1B6A3D4025BFD37C0093D607 /* ProductWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6A3D3F25BFD37C0093D607 /* ProductWebView.swift */; };
+		1B6F449B25C13D4C0013E20C /* WebViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6F449A25C13D4C0013E20C /* WebViewModel.swift */; };
+		1B6F44A025C13E4C0013E20C /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6F449F25C13E4C0013E20C /* WebView.swift */; };
+		1B6F44A925C15F730013E20C /* main.html in Resources */ = {isa = PBXBuildFile; fileRef = 1B6F44A825C15F730013E20C /* main.html */; };
 		1BCBC50125BFD45400736D56 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCBC50025BFD45400736D56 /* Home.swift */; };
 		1BCBC52625BFD9A500736D56 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCBC52525BFD9A500736D56 /* Globals.swift */; };
 		1BCBC52B25BFDA3000736D56 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1BCBC52A25BFDA3000736D56 /* GoogleService-Info.plist */; };
@@ -73,6 +76,9 @@
 		1B6A3D3525BEDC780093D607 /* FeedRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedRow.swift; sourceTree = "<group>"; };
 		1B6A3D3A25BF9AB50093D607 /* FeedDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDetailView.swift; sourceTree = "<group>"; };
 		1B6A3D3F25BFD37C0093D607 /* ProductWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductWebView.swift; sourceTree = "<group>"; };
+		1B6F449A25C13D4C0013E20C /* WebViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewModel.swift; sourceTree = "<group>"; };
+		1B6F449F25C13E4C0013E20C /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		1B6F44A825C15F730013E20C /* main.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = main.html; sourceTree = "<group>"; };
 		1BCBC50025BFD45400736D56 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		1BCBC52525BFD9A500736D56 /* Globals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		1BCBC52A25BFDA3000736D56 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -153,6 +159,7 @@
 		1B6A3CDF25BEC1630093D607 /* KsNetPaySampleApp */ = {
 			isa = PBXGroup;
 			children = (
+				1B6F44A725C15F6A0013E20C /* html */,
 				1BCBC52F25BFDA6400736D56 /* KsNetPaySampleApp.entitlements */,
 				1BCBC52A25BFDA3000736D56 /* GoogleService-Info.plist */,
 				1BCBC54725BFDE0000736D56 /* ViewModel */,
@@ -203,6 +210,7 @@
 				1BCBC4FF25BFD44900736D56 /* Home */,
 				1B6A3D1725BEC1A10093D607 /* Feed */,
 				1B6A3D1825BEC1B60093D607 /* MainTabBarView.swift */,
+				1B6F449F25C13E4C0013E20C /* WebView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -244,6 +252,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		1B6F44A725C15F6A0013E20C /* html */ = {
+			isa = PBXGroup;
+			children = (
+				1B6F44A825C15F730013E20C /* main.html */,
+			);
+			path = html;
+			sourceTree = "<group>";
+		};
 		1BCBC4FF25BFD44900736D56 /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -256,6 +272,7 @@
 			isa = PBXGroup;
 			children = (
 				1BCBC54825BFDE1000736D56 /* SignViewModel.swift */,
+				1B6F449A25C13D4C0013E20C /* WebViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -385,6 +402,7 @@
 				1BCBC52B25BFDA3000736D56 /* GoogleService-Info.plist in Resources */,
 				1B6A3CED25BEC1640093D607 /* Preview Assets.xcassets in Resources */,
 				1B6A3CEA25BEC1640093D607 /* Assets.xcassets in Resources */,
+				1B6F44A925C15F730013E20C /* main.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -519,9 +537,11 @@
 				1B6A3D3B25BF9AB50093D607 /* FeedDetailView.swift in Sources */,
 				1B6A3CE825BEC1630093D607 /* KsNetPaySampleApp.xcdatamodeld in Sources */,
 				1B6A3D4025BFD37C0093D607 /* ProductWebView.swift in Sources */,
+				1B6F449B25C13D4C0013E20C /* WebViewModel.swift in Sources */,
 				1BCBC52625BFD9A500736D56 /* Globals.swift in Sources */,
 				1B6A3CE125BEC1630093D607 /* AppDelegate.swift in Sources */,
 				1B6A3CE325BEC1630093D607 /* SceneDelegate.swift in Sources */,
+				1B6F44A025C13E4C0013E20C /* WebView.swift in Sources */,
 				1B6A3D2825BEC7A10093D607 /* ColorExtension.swift in Sources */,
 				1B6A3CE525BEC1630093D607 /* ContentView.swift in Sources */,
 				1BCBC50125BFD45400736D56 /* Home.swift in Sources */,
