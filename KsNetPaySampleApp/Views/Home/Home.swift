@@ -18,6 +18,8 @@ struct Home: View {
     @State private var token = ""
     @State var bag = Set<AnyCancellable>()
     @State var isLogin = false
+    private let softFeedback = UIImpactFeedbackGenerator(style: .soft)
+    
 
     var body: some View {
         NavigationView {
@@ -40,6 +42,8 @@ struct Home: View {
                                 .foregroundColor(.white)
                         )
                             .onTapGesture {
+                                softFeedback.prepare()
+                                softFeedback.impactOccurred(intensity: 0.8)
                             viewModel.isLogined.sink(receiveCompletion: { completion in
                                 print(completion)
                             }, receiveValue: { (value) in

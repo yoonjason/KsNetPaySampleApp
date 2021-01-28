@@ -9,6 +9,8 @@ import Foundation
 import SwiftUI
 import Alamofire
 
+let brandPurple = "#6042f9"
+
 class Globals {
     static let sharedInstance = Globals()
     
