@@ -15,14 +15,19 @@ struct My: View {
             GeometryReader { proxy in
                 ScrollView(.vertical) {
                     VStack {
+
                         Image("imgGreetingOfficeM")
                             .resizable()
                             .frame(width: proxy.size.width)
                             .padding(.top, 44)
+                            .transition(AnyTransition.scale.animation(.easeOut(duration: 1)))
+                            .zIndex(1)
+
                         tagView
                             .padding(.leading, 25)
                             .padding(.top, -50)
                             .frame(width: proxy.size.width, alignment: .leading)
+
                         statusView
                         roundView(proxy: proxy)
                         Text("나의 쇼핑")
@@ -30,6 +35,7 @@ struct My: View {
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .padding(.top, 50)
                             .padding(.leading, 25)
+//                            .transition(.move(edge: .trailing))
 
                         NavigationLink(destination: DeliveryCheckView()) {
                             RoundedRectangle(cornerRadius: 15)
@@ -38,7 +44,7 @@ struct My: View {
                                 .overlay(
                                 HStack(spacing: 10) {
                                     Image("btnMyMyorder")
-                                    Text("주문/배송 내역")
+                                    Text("주문/배송 내역").kerning(0.7)
                                     Spacer()
                                     Image("btnListArrow")
                                 }
@@ -48,7 +54,7 @@ struct My: View {
                         }
 
                         myShoppingView(proxy: proxy)
-
+                        Spacer()
                     }
 
                 }
@@ -133,7 +139,7 @@ struct myShoppingView: View {
             .overlay(
             HStack(spacing: 10) {
                 Image("btnMyReturn")
-                Text("반품/교환/환불 내역")
+                Text("반품/교환/환불 내역").kerning(0.7)
                 Spacer()
                 Image("btnListArrow")
             }

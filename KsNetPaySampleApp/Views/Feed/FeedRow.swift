@@ -16,9 +16,10 @@ struct FeedRow: View {
                 Image("\(feed.profileImage)")
                     .resizable()
                     .frame(width: 42, height: 42)
+                    .clipShape(Circle())
                 VStack(alignment:.leading) {
                     Text(feed.name).fontWeight(.semibold)
-                    Text("2020년 10월 25일 오전 10:00").font(Font.system(size: 13)).foregroundColor(.gray)
+                    Text("2021년 1월 25일 오전 10:00").font(Font.system(size: 13)).foregroundColor(.gray)
                 }
             }
             Text(feed.description).font(Font.system(size: 14)).lineLimit(3)

@@ -62,7 +62,7 @@ struct Home: View {
 
                         }
                         Text("login Token : " + token).font(Font.system(size: 12))
-                        Text(alertMessage).lineLimit(nil)
+                        Text(alertMessage).fixedSize(horizontal: false, vertical: true)
                     }
                 }
             }
