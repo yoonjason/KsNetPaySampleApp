@@ -50,13 +50,13 @@ struct WebView: UIViewRepresentable {
         webView.allowsBackForwardNavigationGestures = true
         webView.scrollView.isScrollEnabled = true
 
-//        if let url = URL(string: url) {
-//            webView.load(URLRequest(url: url))
-//        }
+        if let url = URL(string: url) {
+            webView.load(URLRequest(url: url))
+        }
 
-        let url = URL(fileURLWithPath: getHtml())
-        let request = URLRequest(url: url)
-        webView.load(request)
+//        let url = URL(fileURLWithPath: getHtml())
+//        let request = URLRequest(url: url)
+//        webView.load(request)
 
 
         return webView

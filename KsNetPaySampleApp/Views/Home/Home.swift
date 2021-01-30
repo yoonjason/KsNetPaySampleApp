@@ -9,6 +9,8 @@ import SwiftUI
 import Combine
 
 struct Home: View {
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
     @State var email: String = ""
     @State var pass: String = ""
     @ObservedObject var viewModel: SignViewModel
@@ -42,8 +44,8 @@ struct Home: View {
                                 .foregroundColor(.white)
                         )
                             .onTapGesture {
-                                softFeedback.prepare()
-                                softFeedback.impactOccurred(intensity: 0.8)
+                            softFeedback.prepare()
+                            softFeedback.impactOccurred(intensity: 0.8)
                             viewModel.isLogined.sink(receiveCompletion: { completion in
                                 print(completion)
                             }, receiveValue: { (value) in
@@ -57,16 +59,25 @@ struct Home: View {
                                 self.token = token
                             })
                                 .store(in: &bag)
-                                
+
                             viewModel.emailLogin()
 
                         }
                         Text("login Token : " + token).font(Font.system(size: 12))
                         Text(alertMessage).fixedSize(horizontal: false, vertical: true)
                     }
+
                 }
             }
                 .navigationBarTitle("로그인")
+                .navigationBarItems(trailing:
+                NavigationLink(
+                    destination: SignUpView(email: "", password: "", rePassword: "", recommendCode: ""),
+                    label: {
+                        Image("icFeedSelect")
+                    })
+
+            )
                 .padding()
         }
             .onReceive(NotificationCenter.default.publisher(for: Notification.Name(rawValue: "pushData"))) { [self] notification in
@@ -82,7 +93,7 @@ struct Home: View {
                 self.isPresented = false
             }, secondaryButton: .cancel())
         }
-        .alert(isPresented: $isLogin) {
+            .alert(isPresented: $isLogin) {
             Alert(title: Text("\($viewModel.userId.wrappedValue)로"), message: Text("로그인 되었습니다."), dismissButton: .cancel())
         }
 

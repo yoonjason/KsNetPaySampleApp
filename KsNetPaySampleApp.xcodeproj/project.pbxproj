@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B49CE7525C53245006D4FB8 /* Stage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B49CE7425C53245006D4FB8 /* Stage.swift */; };
+		1B49CE7B25C53614006D4FB8 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B49CE7A25C53614006D4FB8 /* SignUpView.swift */; };
+		1B49CE8325C53EDD006D4FB8 /* UIViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B49CE8225C53EDD006D4FB8 /* UIViewModifiers.swift */; };
+		1B49CE8825C54E16006D4FB8 /* IdentificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B49CE8725C54E16006D4FB8 /* IdentificationView.swift */; };
 		1B6A3CE125BEC1630093D607 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6A3CE025BEC1630093D607 /* AppDelegate.swift */; };
 		1B6A3CE325BEC1630093D607 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6A3CE225BEC1630093D607 /* SceneDelegate.swift */; };
 		1B6A3CE525BEC1630093D607 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6A3CE425BEC1630093D607 /* ContentView.swift */; };
@@ -57,6 +61,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1B49CE7425C53245006D4FB8 /* Stage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stage.swift; sourceTree = "<group>"; };
+		1B49CE7A25C53614006D4FB8 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		1B49CE8225C53EDD006D4FB8 /* UIViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewModifiers.swift; sourceTree = "<group>"; };
+		1B49CE8725C54E16006D4FB8 /* IdentificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentificationView.swift; sourceTree = "<group>"; };
 		1B6A3CDD25BEC1630093D607 /* KsNetPaySampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KsNetPaySampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B6A3CE025BEC1630093D607 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1B6A3CE225BEC1630093D607 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -140,6 +148,23 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		1B49CE7325C53238006D4FB8 /* Stage */ = {
+			isa = PBXGroup;
+			children = (
+				1B49CE7425C53245006D4FB8 /* Stage.swift */,
+			);
+			path = Stage;
+			sourceTree = "<group>";
+		};
+		1B49CE7925C5324B006D4FB8 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				1B49CE7A25C53614006D4FB8 /* SignUpView.swift */,
+				1B49CE8725C54E16006D4FB8 /* IdentificationView.swift */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
 		1B6A3CD425BEC1630093D607 = {
 			isa = PBXGroup;
 			children = (
@@ -213,6 +238,8 @@
 		1B6A3D1625BEC1940093D607 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1B49CE7925C5324B006D4FB8 /* Account */,
+				1B49CE7325C53238006D4FB8 /* Stage */,
 				1B6F44CF25C171320013E20C /* My */,
 				1BCBC4FF25BFD44900736D56 /* Home */,
 				1B6A3D1725BEC1A10093D607 /* Feed */,
@@ -246,6 +273,7 @@
 			isa = PBXGroup;
 			children = (
 				1B6A3D2725BEC7A10093D607 /* ColorExtension.swift */,
+				1B49CE8225C53EDD006D4FB8 /* UIViewModifiers.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -550,18 +578,22 @@
 				1B6A3D1925BEC1B60093D607 /* MainTabBarView.swift in Sources */,
 				1BCBC54925BFDE1000736D56 /* SignViewModel.swift in Sources */,
 				1B6A3D2125BEC6D80093D607 /* Feed.swift in Sources */,
+				1B49CE7525C53245006D4FB8 /* Stage.swift in Sources */,
 				1B6A3D3625BEDC780093D607 /* FeedRow.swift in Sources */,
 				1B6A3D3B25BF9AB50093D607 /* FeedDetailView.swift in Sources */,
 				1B6A3CE825BEC1630093D607 /* KsNetPaySampleApp.xcdatamodeld in Sources */,
 				1B6A3D4025BFD37C0093D607 /* ProductWebView.swift in Sources */,
+				1B49CE8825C54E16006D4FB8 /* IdentificationView.swift in Sources */,
 				1B6F449B25C13D4C0013E20C /* WebViewModel.swift in Sources */,
 				1BCBC52625BFD9A500736D56 /* Globals.swift in Sources */,
+				1B49CE8325C53EDD006D4FB8 /* UIViewModifiers.swift in Sources */,
 				1B6A3CE125BEC1630093D607 /* AppDelegate.swift in Sources */,
 				1B6A3CE325BEC1630093D607 /* SceneDelegate.swift in Sources */,
 				1B6F44D125C171450013E20C /* My.swift in Sources */,
 				1B6F44D925C257DB0013E20C /* DeliveryCheckView.swift in Sources */,
 				1B6F44A025C13E4C0013E20C /* WebView.swift in Sources */,
 				1B6A3D2825BEC7A10093D607 /* ColorExtension.swift in Sources */,
+				1B49CE7B25C53614006D4FB8 /* SignUpView.swift in Sources */,
 				1B6A3CE525BEC1630093D607 /* ContentView.swift in Sources */,
 				1BCBC50125BFD45400736D56 /* Home.swift in Sources */,
 				1B6F44DE25C2581F0013E20C /* DeliveryConfirmRow.swift in Sources */,
